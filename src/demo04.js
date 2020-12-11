@@ -55,17 +55,16 @@ function makeDemo2() {                                         //<1>
             let g2 = svg.append('g').attr('id', 'g2');
 
             // draw points for (x,y1)
-            drawData(g1, d => scaledY1(d['y1']), d3.curveCardinal);
-            // draw points for (x,y1)
-            drawData(g2, d => scaledY2(d['y2']), d3.curveCatmullRom);
-
-            // color the points as green/red
-            g1.selectAll('circle').attr('fill', 'green');
-            g2.selectAll('circle').attr('fill', 'red');
-
+            g1.call(drawData,d => scaledY1(d['y1']), d3.curveCardinal)
+                // color the points as green/red
+                .selectAll('circle').attr('fill', 'green');
             // color the lines
-            g1.selectAll('path').attr('stroke', 'cyan');
-            g2.selectAll('path').attr('stroke', 'red');
+            g1.selectAll('path').attr('stroke', 'red');            // draw points for (x,y2)
+
+            // draw points for (x,y1)
+            g2.call(drawData, d => scaledY2(d['y2']), d3.curveCatmullRom)
+                .selectAll('circle').attr('fill', 'red');
+            g2.selectAll('path').attr('stroke', 'cyan');
 
             let axsLeft = d3.axisLeft(scaledY1);
             svg.append('g').call(axsLeft)
