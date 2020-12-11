@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     optimization: {
@@ -24,13 +25,14 @@ module.exports = {
 
     entry: {
         index: "./src/index.js",
-        chapter02: "./src/chapter02.js",
+        demo01: "./src/demo01.js",
+        demo02: "./src/demo02.js",
     },
 
     output: {
         path: $path.join(__dirname, "dist"),
-        filename: "[name].js",
-        chunkFilename: "[name].js",
+        filename: "[name].bundle.js",
+        chunkFilename: "[name].bundle.js",
     },
 
     module: {
@@ -64,6 +66,7 @@ module.exports = {
         extensions: [".ts", ".tsx", ".js", ".jsx"]
     },
     plugins: [
+        new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: '[name].css',
             chunkFilename: '[id].css',
