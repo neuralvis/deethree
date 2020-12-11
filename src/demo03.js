@@ -13,17 +13,15 @@ function makeDemo2() {                                         //<1>
                 .attr("width", svgWidth)
                 .attr("height", svgHeight);
 
-            let scaledX = d3.scaleLinear()
-                .domain(d3.extent(data, d => d['x']))
-                .range([marginWidth, svgWidth-marginWidth]);
+            let makeScale = function(accessor, range){
+                    return d3.scaleLinear()
+                        .domain(d3.extent(data, accessor))
+                        .range(range);
+            }
 
-            let scaledY1 = d3.scaleLinear()
-                .domain(d3.extent(data, d => d['y1']))
-                .range([svgHeight-marginWidth, marginWidth]);
-
-            let scaledY2 = d3.scaleLinear()
-                .domain(d3.extent(data, d => d['y2']))
-                .range([svgHeight-marginWidth, marginWidth]);
+            let scaledX = makeScale(d => d['x'],[marginWidth, svgWidth-marginWidth]);
+            let scaledY1 = makeScale(d => d['y1'],[svgHeight-marginWidth, marginWidth]);
+            let scaledY2 = makeScale(d => d['y2'],[svgHeight-marginWidth, marginWidth]);
 
             let drawData = function(g, accessor, curve){
                     g.selectAll('circle')
