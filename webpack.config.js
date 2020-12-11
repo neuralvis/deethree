@@ -24,10 +24,11 @@ module.exports = {
     devtool: "source-map",
 
     entry: {
-        index: "./src/index.js",
+        index:  "./src/index.js",
         demo01: "./src/demo01.js",
         demo02: "./src/demo02.js",
         demo03: "./src/demo03.js",
+        demo04: "./src/demo04.js",
     },
 
     output: {
