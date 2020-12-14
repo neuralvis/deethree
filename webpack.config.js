@@ -30,6 +30,7 @@ module.exports = {
         demo03: "./src/demo03.js",
         demo04: "./src/demo04.js",
         demo05: "./src/demo05.js",
+        demo06: "./src/demo06.js",
     },
 
     output: {
