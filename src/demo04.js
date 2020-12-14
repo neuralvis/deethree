@@ -9,10 +9,6 @@ function makeDemo2() {                                         //<1>
             let svgHeight = 720;
             let marginWidth = 50;
 
-            d3.select('svg')
-                .attr("width", svgWidth)
-                .attr("height", svgHeight);
-
             let makeScale = function(accessor, range){
                     return d3.scaleLinear()
                         .domain(d3.extent(data, accessor))
@@ -50,7 +46,9 @@ function makeDemo2() {                                         //<1>
                         .attr('d', lineGenerator(data));
             }
 
-            let svg = d3.select('svg');
+            let svg = d3.select('svg')
+                .attr("width", svgWidth)
+                .attr("height", svgHeight);
             let g1 = svg.append('g').attr('id', 'g1');
             let g2 = svg.append('g').attr('id', 'g2');
 

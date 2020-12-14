@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23dc4e7a-a6a8-451f-a4a3-d71e5b902b21" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/demo05.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/demo05.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/demo04.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/demo04.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +37,9 @@
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -49,7 +55,8 @@
       <workItem from="1607677447400" duration="193000" />
       <workItem from="1607677845356" duration="15000" />
       <workItem from="1607678059010" duration="181000" />
-      <workItem from="1607682206070" duration="1495000" />
+      <workItem from="1607682206070" duration="1786000" />
+      <workItem from="1607829649536" duration="2973000" />
     </task>
     <servers />
   </component>
