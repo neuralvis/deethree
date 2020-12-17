@@ -73,21 +73,25 @@ function makeDemo() {
       cs.exit().remove();
       ts.exit().remove();
 
-      // 3. Add elements for surplus data and merge
-      cs = cs.enter().append('circle')
-          .attr('r', 5).attr('fill', 'red')
-          .merge(cs);
-
-      ts = ts.enter().append('text')
-          .text(d=>d.name)
-          .merge(ts);
-
-      // 4. Update all items in the combined dataset
       let j = -1, k = -1;
-      cs.attr('cx', datum => scX(datum.value))
-          .attr('cy', datum => scY(++k));
-      ts.attr('x', 150).attr('y', d=>scY(++j));
+      // 3. Add elements for surplus data
+      cs.enter().append('circle')
+          .attr('r', 5).attr('fill', 'red')
+          // 4. Merge selection with previous elements
+          // NOTE: If we don't call merge(), then the selection
+          // will only include those elements added for the surplus
+          // data, and not for the entire data
+          .merge(cs)
+          // 5. Update all items in the merged selection
+          .attr('cx', datum => scX(datum.value))
+          .attr('cy', datum => scY(++k));;
 
+      ts.enter().append('text')
+          .text(d=>d.name)
+          // 4. Merge selection with previous elements
+          .merge(ts)
+          // 5. Update all items in the merged selection
+          .attr('x', 150).attr('y', d=>scY(++j));
   };
 
   //our event handler
