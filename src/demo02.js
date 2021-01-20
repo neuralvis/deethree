@@ -42,6 +42,8 @@ function makeDemo2() {                                         //<1>
                 .attr('cx', datum => scaled_x(datum['x']))
                 .attr('cy', datum => scaled_y2(datum['y2']));
 
+            // the d3.line() factory function returns a function object, which, given a data set, produces a string
+            // suitable for the d attribute of the SVG <path> element
             let lineGenerator = d3.line()
                 .x(d => scaled_x(d['x']))
                 .y(d => scaled_y1(d['y1']))
